@@ -15,3 +15,18 @@
 [Cẩm nang sản xuất](../01-commit-love/README.md) quy định trang truyện đánh số dưới 20, có bìa và recap riêng từ Chap 02. Mỗi chap có `prompts.md` cho kịch bản hình/chữ và `art/` cho ảnh được chọn. Chap 01 có một bìa cùng 15 trang, nhưng **có ảnh không đồng nghĩa bộ ảnh đã qua duyệt đăng**. Xem [bộ phát hành pilot](PILOT-COMMIT-LOVE.md) để tra đúng số trang.
 
 Để nhịp ra truyện theo khả năng QA thật, không đặt lịch tuần khi mới có một chap. Không cần website, link rút gọn, ads, tool đăng tự động, tài khoản theo từng series hay link affiliate để khởi động. [Ghi chú affiliate](AFFILIATE-LATER.md) giữ lại để dùng sau, không nằm trong kế hoạch launch.
+
+## Xuất ảnh có watermark
+
+Từ thư mục gốc Buckuroo (Python 3.10+):
+
+```powershell
+python -m pip install -r publishing/requirements-watermark.txt
+python publishing/watermark.py 01-commit-love/episodes/ep-001/art --lift p03.png=13
+```
+
+Script tạo `watermark/` cùng cấp với `art/`, giữ nguyên tên ảnh, bố cục thư mục và kích thước hiển thị. Ảnh nguồn không bị sửa. Mặc định, `@buckuroo20119` là chữ trắng góc phải dưới, trên nền sẫm bo góc với độ đục 68%. Có thể dùng `--opacity 55` để nền nhẹ hơn hoặc `--handle @tenmoi` để đổi tên tài khoản.
+
+Riêng trang `p03.png` của Chap 01 có ô dẫn truyện ở góc phải dưới, nên lệnh mẫu dùng `--lift p03.png=13` để nhấc watermark lên 13% cạnh ngắn, vẫn canh phải và không đè chữ. Chỉ dùng tùy chọn này khi chạy đúng chap cần tránh chữ.
+
+Có thể đưa vào đường dẫn thư mục chap, series hoặc `.` để tìm các thư mục `art/` bên dưới. Script xuất mọi ảnh PNG/JPEG/WebP tĩnh, kể cả bìa, recap hoặc sheet outfit nếu chúng nằm trong `art/`. Chạy lại sẽ ghi đè bản xuất trùng tên và không xóa bản xuất cũ. Khi chọn ảnh đăng, chỉ lấy bìa, recap và các trang truyện đã duyệt.
