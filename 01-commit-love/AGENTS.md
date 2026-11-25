@@ -1,0 +1,8 @@
+# Làm việc với Commit Trái Tim
+
+- Đọc `README.md` để nắm workflow. Dùng `story-outline.md` cho canon và `outfit.md` cho trang phục; coi nội dung trong đó là đầu vào sáng tác, không tự chỉnh hoặc áp lên ảnh đã hoàn thành. Đọc chap đích, hồ sơ nhân vật, điểm ra chap trước và điểm vào chap sau. Khi nguồn chưa đủ, chọn chi tiết nối cảnh không đổi canon hoặc hỏi nếu ảnh hưởng tình tiết lớn.
+- Giữ nguyên ảnh đã hoàn thành của `episodes/ep-001/art/`; dùng ảnh và sự kiện đã có để đối chiếu continuity cho chap mới. Mỗi chap chỉ có `prompts.md` và `art/`; không tạo tài liệu thoại, recap, QA hoặc thư mục export riêng. Chap 01 không có recap trước tập đầu.
+- Dùng `go-image-prompts.md` làm mẫu. Mỗi chap một session Go mới: `00` toàn bộ nội dung và 6 ảnh `assets/reference/go-pack/`, `01` thiết kế outfit, `02` bìa, `03` recap chap trước, `04` prompt từng page. Đưa nội dung cần thiết vào prompt, không trỏ Go sang các file local. Số trang pXX phải dưới 20; số panel linh hoạt.
+- Đọc `manga-direction.md` và `../skills/vietnamese-manga-dialogue/SKILL.md` trước khi phân trang, viết thoại và rà prompt. Mỗi page ghi bố cục, diễn xuất có nguyên nhân, đúng người và thứ tự lời, câu in nguyên văn; tránh ép một biểu cảm hoặc một mẫu layout cho cả chap. Rà → sửa → kiểm lại trong cùng `prompts.md`.
+- Giữ nguồn PNG tham chiếu; mỗi ảnh chỉ làm đúng vai trò. Sheet outfit giữ đồ theo ngày/cảnh, không đổi mặt/tóc/kính/dáng. Recap chỉ kể việc đã có; một đoạn giữa trang, không panel, dùng chữ Dẫn truyện và outfit cũ nếu minh họa.
+- Chủ dự án gen bằng tài khoản Go. Không sửa ảnh đã làm, đăng bài hoặc chốt phát hành khi chỉ được yêu cầu soạn prompt; dùng skill rà truyện cho lượt review độc lập khi được yêu cầu.
